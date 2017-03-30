@@ -1,0 +1,13 @@
+version: '2'
+services:
+  app:
+    build: .
+    command: "gunicorn"
+    restart: always
+    volumes:
+      - ./JasminWebPanel:/app
+      - ./config/local_settings.py/app/main/local_settings.py
+      - ./config/Makefile:/app/Makefile
+      - ./config/wsgi.py:/app/main/wsgi.py
+    ports:
+      - "0.0.0.0:8000:8000"
