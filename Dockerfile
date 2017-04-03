@@ -5,7 +5,8 @@ MAINTAINER Andrey Maslov <am@fitel.io>
 RUN apt-get update \
     && apt-get --yes --no-install-recommends install \
     	build-essential \
-    	locales
+    	locales \
+        telnet
 
 # Project requirements
 RUN mkdir /app
